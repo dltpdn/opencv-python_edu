@@ -8,6 +8,8 @@ img3 = cv2.imread('../img/model3.jpg')
 
 img1_rgb = np.zeros(img1.shape, dtype=np.uint8)
 img1_rgb[:,:,2],img1_rgb[:,:,1], img1_rgb[:,:,0] = img1[:,:,0], img1[:,:,1], img1[:,:,2]
+#img1_rgb = img1[:,:,::-1]
+#img1_rgb = img1[:,:,(2,1,0)]
 
 b,g,r = cv2.split(img2)
 img2_rgb = cv2.merge([r,g,b])
