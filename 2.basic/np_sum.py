@@ -1,0 +1,22 @@
+import numpy as np
+
+a = np.arange(12).reshape(-1,4)
+print(a)
+print('sum')
+print(np.sum(a)) #np.sum(-1)
+print(np.sum(a, 0))
+print(np.sum(a, 1))
+print(np.sum(a, (0,)))
+
+print('min')
+print(np.min(a))
+print(np.min(a, 0))
+print(np.min(a, 1))
+print('max')
+print(np.max(a))
+print(np.max(a, 0))
+print(np.max(a, 1))
+print('mean')
+print(np.mean(a))
+print(np.mean(a, 0))
+print(np.mean(a, 1))
