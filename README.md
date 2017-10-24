@@ -4,9 +4,9 @@
 ### APT
 
 open the file `/etc/apt/apt.conf` and edit.
-`
+```
 $ vi /etc/apt/apt.conf 
-`
+```
 ```
 # /etc/apt/apt.conf
 Acquire::http::proxy "http://username:password@123.45.6.7:8080"
@@ -58,11 +58,11 @@ sudo apt-get update
 ```
 
 ```
-sudo apt install libxine2
-sudo apt install libqtgui4
-sudo apt install libjasper1
-sudo apt install libqt4-test
-sudo apt install libqt4-opengl
+sudo apt install -y libxine2
+sudo apt install -y libqtgui4
+sudo apt install -y libjasper1
+sudo apt install -y libqt4-test
+sudo apt install -y libqt4-opengl
 ```
 ```
 sudo dpkg -i OpenCV*.deb
