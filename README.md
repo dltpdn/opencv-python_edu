@@ -1,7 +1,8 @@
 # OpenCV-Python on Raspberry-Pi Education
 
 ## Proxy configuration for various package managers
-* APT
+### APT
+
 open the file `/etc/apt/apt.conf` and edit.
 `
 $ vi /etc/apt/apt.conf 
@@ -12,7 +13,7 @@ Acquire::http::proxy "http://username:password@123.45.6.7:8080"
 Acquire::https::proxy "123.45.6.7:8080"
 ```
 
-* GIT
+### GIT
 ```
 $ git config --global http.proxy "123.45.6.7:8080”
 $ git config --global https.proxy ":8080"
@@ -23,7 +24,7 @@ you can check the result in the file `~/.gitconig	`
 $ cat ~/.gitconfig 
 ```
 
-* PIP
+### PIP
 ```
 $ pip install --proxy="123.45.6.7:8080" --index-url=http://pypi.python.org/simple/ --trusted-host pypi.python.org packagename 
 ```
@@ -32,7 +33,7 @@ or
 $ pip install --proxy http://123.45.6.7:8080 packagename 
 ```
 
-* wget
+### wget
 open the file `~/.wgetrc` and edit.
     
 ```
