@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-img = cv2.imread('../img/house2.jpg')
+img = cv2.imread('../img/airplane.jpg')
 cv2.imshow('origin', img)
 Z = img.reshape((-1,3))
 # convert to np.float32

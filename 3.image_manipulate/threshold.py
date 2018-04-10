@@ -8,6 +8,7 @@ t_np = np.zeros_like(img)
 t_np[ img > 127] = 255 
 
 ret, t_bin = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+print(ret)
 ret, t_bininv = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY_INV)
 ret, t_truc = cv2.threshold(img, 127, 255, cv2.THRESH_TRUNC)
 ret, t_2zr = cv2.threshold(img, 127, 255, cv2.THRESH_TOZERO)

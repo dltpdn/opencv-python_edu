@@ -2,84 +2,30 @@ import cv2
 import numpy as np
 import math
 
+cap = cv2.VideoCapture(0)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+rows, cols = 240, 320
+map_y, map_x = np.indices((rows, cols), dtype=np.float32)
 
-cam = cv2.VideoCapture(0)
-cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
-cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
-while True:    
-    ret, img = cam.read()
-    if not ret :
-        print("no frame")
+map_mirror_x = map_x.copy()
+map_mirror_y = map_y.copy()    
+for r in range(rows):
+    for c in range(cols):
+        if c >= cols/2:
+            map_mirror_x.itemset((r,c), cols-c-1)
+    
+map_wave_x = map_x + 15*np.sin(map_y/20)
+map_wave_y = map_y + 15*np.sin(map_x/20)    
+    
+while True:
+    ret, frame = cap.read()
+    mirror=cv2.remap(frame,map_mirror_x,map_mirror_y,cv2.INTER_LINEAR)
+    wave = cv2.remap(frame,map_wave_x,map_wave_y,cv2.INTER_LINEAR)
+    merged = np.hstack((mirror, frame, wave))
+    cv2.imshow('merged',merged)
+    if cv2.waitKey(1) & 0xFF== 27:
         break
-
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    rows, cols = img.shape
-    
-    #####################
-    # Vertical wave
-    
-    #img_output = np.zeros(img.shape, dtype=img.dtype)
-    img_output = np.zeros_like(img)
-    
-    for i in range(rows):
-        for j in range(cols):
-            offset_x = int(25.0 * math.sin(2 * 3.14 * i / 180))
-            offset_y = 0
-            if j+offset_x < rows:
-                img_output[i,j] = img[i,(j+offset_x)%cols]
-            else:
-                img_output[i,j] = 0
-    
-    cv2.imshow('Input', img)
-    cv2.imshow('Vertical wave', img_output)
-    
-    #####################
-    # Horizontal wave
-    
-    img_output = np.zeros(img.shape, dtype=img.dtype)
-    
-    for i in range(rows):
-        for j in range(cols):
-            offset_x = 0
-            offset_y = int(16.0 * math.sin(2 * 3.14 * j / 150))
-            if i+offset_y < rows:
-                img_output[i,j] = img[(i+offset_y)%rows,j]
-            else:
-                img_output[i,j] = 0
-    
-    cv2.imshow('Horizontal wave', img_output)
-    
-    #####################
-    # Both horizontal and vertical wave
-    
-    img_output = np.zeros(img.shape, dtype=img.dtype)
-    
-    for i in range(rows):
-        for j in range(cols):
-            offset_x = int(20.0 * math.sin(2 * 3.14 * i / 150))
-            offset_y = int(20.0 * math.cos(2 * 3.14 * j / 150))
-            if i+offset_y < rows and j+offset_x < cols:
-                img_output[i,j] = img[(i+offset_y)%rows,(j+offset_x)%cols]
-            else:
-                img_output[i,j] = 0
-    
-    cv2.imshow('Multidirectional wave', img_output)
-    
-    #####################
-    # Concave effect
-    
-    img_output = np.zeros(img.shape, dtype=img.dtype)
-    
-    for i in range(rows):
-        for j in range(cols):
-            offset_x = int(128.0 * math.sin(2 * 3.14 * i / (2*cols)))
-            offset_y = 0
-            if j+offset_x < cols:
-                img_output[i,j] = img[i,(j+offset_x)%cols]
-            else:
-                img_output[i,j] = 0
-    
-    cv2.imshow('Concave', img_output)
-    
-    cv2.waitKey()
+cap.release
+cv2.destroyAllWindows()
 

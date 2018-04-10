@@ -50,7 +50,7 @@ def backProjection(img, roi):
     result = cv2.add(bg2, res)
     cv2.imshow('result', result)
     
-img1 = cv2.imread('../img/chroma_key.jpg')
+img1 = cv2.imread('../img/hand.jpg')
 print(img1.shape)
 img2 = img1.copy()
 cv2.namedWindow('original')

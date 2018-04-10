@@ -7,10 +7,12 @@ file_name = "../img/noise.jpg"
 img = cv2.imread(file_name, cv2.IMREAD_GRAYSCALE)
 print(img.shape)
 
-ret, th1 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+ret, th1 = cv2.threshold(img, 100, 255, cv2.THRESH_BINARY)
 ret, th2 = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+print(ret)
 blur = cv2.GaussianBlur(img, (5,5), 0)
 ret, th3 = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+print(ret)
  
 imgs = [img, 0, th1, img, 0, th2, blur, 0, th3]
 titles = ['Original', 'Histogram', 'Global', 'Original', 'Histogram', 'Otsu', 'Original', 'Histogram', 'Outs after blur'] 

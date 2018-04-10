@@ -23,6 +23,7 @@ def onMouse(event,x,y,flags,param):
             if w >0 and h >0:
                 draw = img.copy()
                 crop = draw[y0:y0+h, x0:x0+w]
+                print("x:%d, y:%d, w:%d, h:%d" % (x0, y0, y, x))
                 cv2.imshow('crop', crop)
                 cv2.moveWindow('crop', width, 0)
                 
