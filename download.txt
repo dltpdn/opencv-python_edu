@@ -1,0 +1,8 @@
+* big bug bunny : 
+	* http://bbb3d.renderfarming.net/download.html
+	* http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_surround-fix.avi
+* 101 Objects - CALTECH
+	* http://www.vision.caltech.edu/Image_Datasets/Caltech101/#Download
+	* http://www.vision.caltech.edu/Image_Datasets/Caltech101/101_ObjectCategories.tar.gz
+* Face Landmark
+	* http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
