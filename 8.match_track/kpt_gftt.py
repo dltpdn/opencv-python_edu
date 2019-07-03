@@ -14,4 +14,4 @@ img_draw = cv2.drawKeypoints(img, keypoints, None)
 # 결과 출력 ---④
 cv2.imshow('GFTTDectector', img_draw)
 cv2.waitKey(0)
-cv2.destrolyAllWindows()
+cv2.destroyAllWindows()
