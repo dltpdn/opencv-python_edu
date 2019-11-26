@@ -1,72 +1,35 @@
-# OpenCV-Python on Raspberry-Pi Education
+# OpenCV Python Training Course
+OpenCV Python 교육에 참여하신 것을 환영합니다.
+안녕하세요? 저는 이 교육의 강사, 이세우입니다.
+이 레포지토리는 이 교육을 위해 만들었으며, 지속적으로 수정할 것입니다.
+즐겁고 유익한 교육이 되기 바랍니다.
 
-## Proxy configuration for various package managers
-### APT
+Welcome to OpenCV Python training course!
+Hi! I am Lee Sewoo, the instructor of this course.
+I made this repository for this course, and it will be updated continually.
+Thanks for your attention and I wish you a funny and informative education.
 
-open the file `/etc/apt/apt.conf` and edit.
-```
-$ vi /etc/apt/apt.conf 
-```
-```
-# /etc/apt/apt.conf
-Acquire::http::proxy "http://username:password@123.45.6.7:8080"
-Acquire::https::proxy "123.45.6.7:8080"
-```
+## 강사 소개(About me, instructor)
+* [Profile](https://drive.google.com/file/d/0B3FcLTiIcKwOZExsSEg4QnpRcWs/view?usp=sharing)
+* Contact
+	* E-mail : dltpdn@gmail.com
+	* Blog : http://blog.xcoda.net
 
-### GIT
-```
-$ git config --global http.proxy "123.45.6.7:8080”
-$ git config --global https.proxy ":8080"
-```
-you can check the result in the file `~/.gitconig	`
+## Download Links
+* Big Bug Bunny video file : 
+	* http://bbb3d.renderfarming.net/download.html
+	* http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_surround-fix.avi
+* 101 Objects - CALTECH
+	* http://www.vision.caltech.edu/Image_Datasets/Caltech101/#Download
+	* http://www.vision.caltech.edu/Image_Datasets/Caltech101/101_ObjectCategories.tar.gz
+* Face Landmark
+	* http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
 
-```
-$ cat ~/.gitconfig 
-```
+## Note
+* OpenCV Installation Files for Raspberry Pi
+	* https://github.com/dltpdn/opencv-for-rpi
 
-### PIP
-```
-$ pip install --proxy="123.45.6.7:8080" --index-url=http://pypi.python.org/simple/ --trusted-host pypi.python.org packagename 
-```
-or 
-```
-$ pip install --proxy http://123.45.6.7:8080 packagename 
-```
+* 출판서적, "파이썬으로 만드는 OpenCV 프로젝트" 소스코드
+* Published Book source code
+	* https://github.com/dltpdn/insightbook.opencv_project_python
 
-### wget
-open the file `~/.wgetrc` and edit.
-    
-```
-$ vi ~/.wgetrc 
-```
-
-```
-use_proxy=yes
-http_proxy=168.219.61.252:8080
-https_proxy=168.219.61.252:8080
-```
-or
-```
-$ wget "url" -e use_proxy=yes -e http_proxy=123.45.6.7:8080 
-```
-
-
-## Setup OpenCV on R-Pi
-
-```
-sudo apt-get update
-```
-
-```
-sudo apt install -y libxine2
-sudo apt install -y libqtgui4
-sudo apt install -y libjasper1
-sudo apt install -y libqt4-test
-sudo apt install -y libqt4-opengl
-```
-```
-sudo dpkg -i OpenCV*.deb
-```
-```
-pkg-config —modversion opencv
-```
