@@ -1,8 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # ignore my private studing files
 0.study/
 
+=======
+>>>>>>> ddf548983e2a14bd86dd2a438f812915c49a8bce
 =======
 >>>>>>> ddf548983e2a14bd86dd2a438f812915c49a8bce
 # face landmark data file
@@ -13,9 +16,12 @@
 # Edit at https://www.gitignore.io/?templates=python,opencv,eclipse,visualstudiocode
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # jupyter notebook
 .ipynb_checkpoints
 
+=======
+>>>>>>> ddf548983e2a14bd86dd2a438f812915c49a8bce
 =======
 >>>>>>> ddf548983e2a14bd86dd2a438f812915c49a8bce
 ### Eclipse ###
@@ -214,11 +220,14 @@ dmypy.json
 
 # End of https://www.gitignore.io/api/python,opencv,eclipse,visualstudiocodesdist/
 <<<<<<< HEAD
+<<<<<<< HEAD
 2.interface/record.avi
 2.interface/record.mov
 2.interface/record.mp4
 4.img_processing/cropped.jpg
 4.img_processing/cropped2.jpg
 9.ml/svm_bow_coin25000.xml
+=======
+>>>>>>> ddf548983e2a14bd86dd2a438f812915c49a8bce
 =======
 >>>>>>> ddf548983e2a14bd86dd2a438f812915c49a8bce
