@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread('./img/blank_500.jpg')
+img = cv2.imread('../img/blank_500.jpg')
 
 cv2.line(img, (50, 50), (150, 50), (255,0,0))                # 파란색 1픽셀 선
 cv2.line(img, (200, 50), (300, 50), (0,255,0))               # 초록색 1픽셀 선

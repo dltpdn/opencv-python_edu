@@ -1,7 +1,7 @@
 import cv2
 
 title = 'mouse event'                   # 창 제목
-img = cv2.imread('./img/blank_500.jpg') # 백색 이미지 읽기
+img = cv2.imread('../img/blank_500.jpg') # 백색 이미지 읽기
 cv2.imshow(title, img)                  # 백색 이미지 표시
 
 def onMouse(event, x, y, flags, param): # 아무스 콜백 함수 구현 ---①

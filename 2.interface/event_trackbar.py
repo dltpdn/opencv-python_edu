@@ -3,7 +3,7 @@ import numpy as np
 
 win_name = 'Trackbar'                                   # 창 이름
 
-img = cv2.imread('./img/blank_500.jpg')
+img = cv2.imread('../img/blank_500.jpg')
 cv2.imshow(win_name,img)                                # 초기 이미지를 창에 표시
 
 # 트랙바 이벤트 처리 함수 선언 ---①

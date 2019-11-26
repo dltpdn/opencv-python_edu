@@ -5,7 +5,7 @@ import numpy as np
 import dlib
 
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
+predictor = dlib.shape_predictor('../data/shape_predictor_68_face_landmarks.dat')
 
 def getFaceRects(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

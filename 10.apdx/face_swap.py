@@ -5,7 +5,7 @@ import sys
 
 # 얼굴 검출기와 랜드마크 검출기 생성 --- ①
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor('./shape_predictor_68_face_landmarks.dat')
+predictor = dlib.shape_predictor('../data/shape_predictor_68_face_landmarks.dat')
 
 # 얼굴 및 랜드마크 검출해서 좌표 반환하는 함수 ---② 
 def getPoints(img):

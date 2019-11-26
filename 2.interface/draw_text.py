@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread('./img/blank_500.jpg')
+img = cv2.imread('../img/blank_500.jpg')
 
 
 cv2.putText(img, "Plain", (50, 30), cv2.FONT_HERSHEY_PLAIN, 1, (0, 0,0))            # sans-serif small

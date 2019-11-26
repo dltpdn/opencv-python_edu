@@ -1,5 +1,10 @@
 # ref(Example code) : http://dlib.net/face_landmark_detection.py.html
 # ref2(annotation map to 68) :https://ibug.doc.ic.ac.uk/resources/facial-point-annotations/
+
+# Instruction to run
+# 1. Install CMake (http://cmake.org/download)
+# 2. Install dlib (pip install dlib)
+# 3. Download shape_predictor_68_face_landmarks.dat file (http://dlib.net/files/)
 import cv2
 import dlib
 import numpy as np

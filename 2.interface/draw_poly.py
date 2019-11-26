@@ -1,7 +1,7 @@
 import cv2
 import numpy as np                          # 좌표 표현을 위한 numpy 모듈  ---①
 
-img = cv2.imread('./img/blank_500.jpg')
+img = cv2.imread('../img/blank_500.jpg')
 
 # Numpy array로 좌표 생성 ---②
 pts1 = np.array([[50,50], [150,150], [100,140],[200,240]], dtype=np.int32) # 번개 모양 선 좌표

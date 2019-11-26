@@ -35,7 +35,7 @@ def onMouse(event,x,y,flags,param):     # 마우스 이벤트 핸들 함수  ---
                 cv2.imshow('img', img)  # 드래그 방향이 잘못된 경우 사각형 그림 없는 원본 이미지 출력
                 print("좌측 상단에서 우측 하단으로 영역을 드래그 하세요.")
 
-img = cv2.imread('./img/sunset.jpg')
+img = cv2.imread('../img/sunset.jpg')
 cv2.imshow('img', img)
 cv2.setMouseCallback('img', onMouse) # 마우스 이벤트 등록 ---⑧
 cv2.waitKey()

@@ -1,6 +1,6 @@
 import cv2
 
-img_file = "./img/girl.jpg" 
+img_file = "../img/girl.jpg" 
 img = cv2.imread(img_file) 
 title = 'IMG'                   # 창 이름 
 x, y = 100, 100                 # 최초 좌표

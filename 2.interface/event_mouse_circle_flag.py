@@ -1,7 +1,7 @@
 import cv2
 
 title = 'mouse event'                   # 창 제목
-img = cv2.imread('./img/blank_500.jpg') # 백색 이미지 읽기
+img = cv2.imread('../img/blank_500.jpg') # 백색 이미지 읽기
 cv2.imshow(title, img)                  # 백색 이미지 표시
 
 colors = {'black':(0,0,0),
