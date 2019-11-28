@@ -25,6 +25,16 @@ Thanks for your attention and I wish you a funny and informative education.
 * Face Landmark
 	* http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
 
+## Reference Links
+* OpenCV
+	* Official Site : https://opencv.org/
+	* GitHub Repository
+		* Main : https://github.com/opencv/opencv
+		* Extra : https://github.com/opencv/opencv_contrib
+	* Document : https://docs.opencv.org/
+* Fourcc.org :  http://fourcc.org/
+
+
 ## Note
 * OpenCV Installation Files for Raspberry Pi
 	* https://github.com/dltpdn/opencv-for-rpi
