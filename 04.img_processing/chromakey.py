@@ -14,9 +14,9 @@ y = height2 - height1
 w = x + width1
 h = y + height1
 
-#--③ 크로마키 배경 영상에서 크로마키 영역을 10픽셀 정도로 지정
-chromakey = img1[:height1, :70, :]
-offset = 30
+#--③ 크로마키 배경 영상에서 크로마키 영역을 선택
+roi_x, roi_y, roi_w, roi_h = cv2.selectROI("chromakey", img1, False)
+chromakey = img1[roi_y:roi_y + roi_h, roi_x:roi_x+roi_w]
 
 #--④ 크로마키 영역과 영상 전체를 HSV로 변경
 hsv_chroma = cv2.cvtColor(chromakey, cv2.COLOR_BGR2HSV)
@@ -24,7 +24,7 @@ hsv_img = cv2.cvtColor(img1, cv2.COLOR_BGR2HSV)
 
 #--⑤ 크로마키 영역의 H값에서 offset 만큼 여유를 두어서 범위 지정
 # offset 값은 여러차례 시도 후 결정
-#chroma_h = hsv_chroma[0]
+offset = 30
 chroma_h = hsv_chroma[:,:,0]
 lower = np.array([chroma_h.min()-offset, 100, 100])
 upper = np.array([chroma_h.max()+offset, 255, 255])
@@ -35,11 +35,12 @@ mask_inv = cv2.bitwise_not(mask)
 roi = img2[y:h, x:w]
 fg = cv2.bitwise_and(img1, img1, mask=mask_inv)
 bg = cv2.bitwise_and(roi, roi, mask=mask)
-img2[y:h, x:w] = fg + bg
+added = img2.copy()
+added[y:h, x:w] = fg + bg
 
 #--⑦ 결과 출력
-cv2.imshow('chromakey', img1)
 cv2.imshow('masked', fg)
-cv2.imshow('added', img2)
+cv2.imshow('background', img2)
+cv2.imshow('added', added)
 cv2.waitKey()
 cv2.destroyAllWindows()
