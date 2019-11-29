@@ -16,6 +16,7 @@ def onMouse(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
         seed = (x,y)
         # 색 채우기 적용 ---④
+        newVal = img[y,x].tolist()
         retval = cv2.floodFill(img, mask, seed, newVal, loDiff, upDiff)
         # 채우기 변경 결과 표시 ---⑤
         cv2.imshow('img', img)
