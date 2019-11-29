@@ -12,7 +12,7 @@ cdf = hist.cumsum()                                     # 누적 히스토그램
 cdf_m = np.ma.masked_equal(cdf, 0)                      # 0(zero)인 값을 NaN으로 제거
 cdf_m = (cdf_m - cdf_m.min()) /(rows * cols) * 255      # 이퀄라이즈 히스토그램 계산
 cdf = np.ma.filled(cdf_m,0).astype('uint8')             # NaN을 다시 0으로 환원
-print(cdf.shape)
+print(cdf.shape, cdf)
 img2 = cdf[img]                                         # 히스토그램을 픽셀로 맵핑
 
 #--③ OpenCV API로 이퀄라이즈 히스토그램 적용
